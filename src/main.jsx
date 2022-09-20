@@ -8,13 +8,14 @@ import {
 import ErrorPage from './error-page';
 import Contact from './routes/contact';
 import './index.css'
-import Root from './routes/root';
+import Root, { loader as rootLoader } from './routes/root';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Root />,
     errorElement: <ErrorPage />,
+    loader: rootLoader,
     children: [
       {
         path: 'contacts/:contactId',
